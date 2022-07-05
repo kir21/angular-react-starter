@@ -18,6 +18,8 @@ jobs:
           node-version: '12.x'
       - name: Install dependencies
         run: npm install
+      - name: Start 
+        run: npm start
       - name: Build
         run: npm run build
       - name: Test
