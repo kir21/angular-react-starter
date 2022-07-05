@@ -3,7 +3,7 @@ name: CI Angular app through Github Actions
 on: push
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: alpine-latest
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 14.x
@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 14.x
       - name: Setup
-        run: npm i
+        run: npm ci
       - name: Test
         run: npm ng test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
 
