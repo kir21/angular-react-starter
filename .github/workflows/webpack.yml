@@ -1,16 +1,35 @@
+name: My-Test-Task
 
-name: CI Angular app through Github Actions
 on: push
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
- 
-      - run: npm test
 
+jobs:
+
+  tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./angular
+
+    steps:
+      - uses: actions/checkout@v3
+      # make file with current time inside so we can meassure pipeline exectuion total time
+      - name: Start time meassure
+        run: echo "$(date +%s)" > ./test.txt
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: ./angular/test.txt
+          
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          
+      - name: Setup
+        run: npm ci
+
+      - name: run tests
+        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+        
 
