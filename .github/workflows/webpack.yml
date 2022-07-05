@@ -6,23 +6,18 @@ on:
       - 'master'
 
 jobs:
-  build:
-    name: Build and Test
-    runs-on: ubuntu-latest
+
+ chekout:
+    runs-on: alpine-latest
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Use Node 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install dependencies
-        run: npm install
-      - name: Start 
-        run: npm start
-      - name: Build
-        run: npm run build
-      - name: Test
-        run: npm run test
+    - uses: actions/chekout@v2
+
+ ng-test:
+    runs-on: alpine-latest
+    
+    steps:
+    - name: test
+      run: ng test --single-run
         
 
