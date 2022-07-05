@@ -10,7 +10,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - name: Test
-        run: npm ng test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+ 
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test -- --watch=false --browsers=ChromeHeadless
 
 
