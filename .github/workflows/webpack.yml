@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 14.x
       - name: Setup
-        run: npm ci
+        run: npm whach
       - name: Test
         run: npm ng test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
 
