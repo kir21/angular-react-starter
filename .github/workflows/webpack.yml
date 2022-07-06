@@ -26,8 +26,8 @@ jobs:
         with:
           node-version: 16.x
           
-#      - name: Setup ci
-#        run: npm ci
+      - name: Setup ci
+        run: npm ci
 #      - name: Setup
 #        run: npm run lint
 
