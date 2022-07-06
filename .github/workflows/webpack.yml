@@ -29,7 +29,7 @@ jobs:
       - name: Setup ci
         run: npm ci
       - name: Setup
-        run: npm run watch 
+        run: npm run build
 
       - name: run tests
         run: npm run test --no-watch --no-progress --browsers=ChromeHeadlessCI
