@@ -30,10 +30,10 @@ jobs:
         run: npm ci
       - name: Setup
         run: npm run lint
-      - name: Setup
-        run: npm run start
 
       - name: run tests
-        run: npm run test
+        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
+        
+
         
 
