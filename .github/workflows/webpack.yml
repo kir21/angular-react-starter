@@ -6,20 +6,20 @@ jobs:
 
   tests:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./angular
+#    defaults:
+#      run:
+#        working-directory: ./angular
 
     steps:
       - uses: actions/checkout@v3
       # make file with current time inside so we can meassure pipeline exectuion total time
-      - name: Start time meassure
-        run: echo "$(date +%s)" > ./test.txt
+#      - name: Start time meassure
+#        run: echo "$(date +%s)" > ./test.txt
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact
-          path: ./angular/test.txt
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: my-artifact
+#          path: ./angular/test.txt
           
       - name: Use Node.js 16.x
         uses: actions/setup-node@v3
@@ -28,8 +28,8 @@ jobs:
           
       - name: Setup ci
         run: npm ci
-      - name: Setup
-        run: npm run lint
+#      - name: Setup
+#        run: npm run lint
 
       - name: run tests
         run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
