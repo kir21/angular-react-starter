@@ -26,10 +26,10 @@ jobs:
         with:
           node-version: 16.x
           
-      - name: Setup
+      - name: Setup ci
         run: npm ci
       - name: Setup
-        run: npm build 
+        run: npm run build 
 
       - name: run tests
         run: npm run test
