@@ -34,6 +34,9 @@ jobs:
       - name: run tests
         run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
         
+      - name: Build
+        run: npm build
+        
 
         
 
