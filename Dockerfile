@@ -3,7 +3,7 @@ FROM nginx:alpine
 
 RUN chown -R nginx:nginx /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY dist /usr/share/nginx/html
+COPY ./dist/angular-starter /usr/share/nginx/html
 
 RUN chown -R nginx:nginx /var/cache/nginx && \
     chown -R nginx:nginx /var/log/nginx && \
