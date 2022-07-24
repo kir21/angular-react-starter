@@ -4,7 +4,7 @@ RUN ls -la .
 RUN chown -R nginx:nginx /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/nginx.conf
 RUN ls -la ./
-COPY ./dist /usr/share/nginx/html
+COPY /angular/dist /usr/share/nginx/html
 
 RUN chown -R nginx:nginx /var/cache/nginx && \
     chown -R nginx:nginx /var/log/nginx && \
