@@ -1,5 +1,5 @@
-FROM nginx:alpine
-
+FROM nginx:stable-alpine
+RUN ls -la .
 
 RUN chown -R nginx:nginx /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/nginx.conf
